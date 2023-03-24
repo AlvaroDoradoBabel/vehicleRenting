@@ -1,5 +1,6 @@
 package com.example.vehicleRenting.services;
 
+import com.example.vehicleRenting.exceptions.RequiredApiValidationException;
 import com.example.vehicleRenting.exceptions.RequiredMissingFieldException;
 import com.example.vehicleRenting.mappers.DireccionMapper;
 import com.example.vehicleRenting.mappers.PersonaMapper;
@@ -45,5 +46,14 @@ public class PersonaServiceImpl implements PersonaService{
         if(persona.getNombre() == null || persona.getNombre().isEmpty()) {
             throw new RequiredMissingFieldException();
         }
+    }
+
+    @Override
+    public Persona getPerson(int idPersona) throws Exception {
+        if(idPersona < 0) {
+            throw new RequiredApiValidationException();
+        }
+
+        return null;
     }
 }

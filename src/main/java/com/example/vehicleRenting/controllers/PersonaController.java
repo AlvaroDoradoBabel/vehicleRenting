@@ -18,7 +18,7 @@ public class PersonaController {
         this.personaService = personaService;
     }
     @PostMapping("/persona")
-    ResponseEntity addPersona(@RequestBody Persona persona){
+    ResponseEntity addPersona(@RequestBody Persona persona) throws Exception{
 
         try {
             this.personaService.addPersona(persona);
